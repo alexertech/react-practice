@@ -5,12 +5,21 @@
     <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
     <script type="text/babel">
 
-        const Message = (props) => <div className="message">{props.msg}</div>
+        // const Message = (props) => <div className="message">{props.msg}</div>
+        // For use with <Message msg="First" />
+
+        const Message = (props) => <div className="message">{props.children}</div>
+        // const element = (
+        //     <div className="container">
+        //         <Message>Other test</Message>
+        //         {Message({msg: 'Hello World'})}
+        //         {Message({msg: 'Goodbye World'})}
+        //     </div>
+        // )
         const element = (
             <div className="container">
-                <Message>Other test</Message>
-                {Message({msg: 'Hello World'})}
-                {Message({msg: 'Goodbye World'})}
+                <Message>First</Message>
+                <Message>Second</Message>
             </div>
         )
 
